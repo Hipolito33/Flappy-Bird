@@ -18,7 +18,7 @@ var eec = 100  // Espaço entre os canos em pixels.
 var constant  // Será usada pra soma depois.
 var bX = 33  // Posição X do Bird.
 var bY = 200  // Posição Y do Bird.
-var gravidade = 1.4  // Gravidade para suavizar os movimentos do Bird.
+var gravidade = 0.6  // Gravidade para suavizar os movimentos do Bird.
 var score = 0  // Guarda o placar do Jogo.
 var cano = []
 
@@ -32,6 +32,15 @@ var fly = new Audio()
 fly.src = 'sounds/fly.mp3'
 var score = new Audio()
 score.src = 'sounds/score.mp3'
+
+//Captura de tecla:
+document.addEventListener('keydown', voa); //Quando for pressionada uma tecla, chama a function voa
+
+function voa(){
+    bY = bY-26 
+    fly.play()
+}
+
 
 function jogo(){
     // fundo do jogo
